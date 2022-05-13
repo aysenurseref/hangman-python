@@ -16,7 +16,7 @@ def game(word):
     right_guessed_letters = []
     wrong_guessed_letters=[]
     guessed_letters_str = ""
-    tries = 7
+    tries = 8
     print("Let's play Hangman!")
     print(display_hangman(tries))
     print(word_completion)
@@ -125,25 +125,28 @@ def display_hangman(tries):
                    |     
                    -
                 """,
-                #
+                # noose
                 """
                    --------
                    |      |
+                   |      
+                   |    
+                   |    
+                   |     
+                   -
+                """,
+                # upside L
+                """
+                   --------
+                   |      
                    |      
                    |    
                    |      
                    |     
                    -
                 """,
-                # initial empty state
+                #initial empty
                 """
-                   --------
-                   |      
-                   |      
-                   |    
-                   |      
-                   |     
-                   -
                 """
     ]
     return stages[tries]
@@ -155,6 +158,7 @@ def main():
     while input("Play Again? (Y/N) ").upper() == "Y":
         word = get_word()
         game(word)
+    
 
 
 if __name__ == "__main__":
