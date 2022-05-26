@@ -22,7 +22,7 @@ def game(word):
     print(word_completion)
     print("\n")
     while not guessed and tries > 0:
-        guess = input(f"Allowed Tries Left {tries}.Please guess a letter or word: ").upper()
+        guess = input(f"Allowed Tries Left {tries}.Please guess a letter: ").upper()
         if len(guess) == 1 and guess.isalpha():
             if guess in guessed_letters:
                 print("You already guessed the letter", guess)
@@ -155,7 +155,7 @@ def display_hangman(tries):
 def main():
     word = get_word()
     game(word)
-    while input("Play Again? (Y/N) ").upper() == "Y":
+    while input("Press Y to play the game again or press any other key to exit the game: ").upper() == "Y":
         word = get_word()
         game(word)
     
